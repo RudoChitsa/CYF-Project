@@ -1,28 +1,209 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Project: Event invite</title>
-        <style>
-            #title {
-                color: blue;
-                font-size: 45px;
-                font-style: italic;
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You're Invited! A Sweet Celebration!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* General Body Styling */
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(to bottom right, #fdf8f8, #ffeaf2); /* Soft, cute gradient */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            color: #555;
+            padding: 20px;
+            box-sizing: border-box;
+            line-height: 1.6;
+        }
+
+        /* Invitation Container */
+        .invite-container {
+            background-color: #ffffff;
+            border-radius: 25px; /* More rounded for cuteness */
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); /* Softer shadow */
+            width: 100%;
+            max-width: 600px;
+            padding: 40px;
+            text-align: center;
+            overflow: hidden;
+            border: 3px dashed #ffb6c1; /* Cute dashed border */
+            position: relative; /* For decorative elements */
+        }
+
+        /* Cute Decorative Corner Element (Optional) */
+        .invite-container::before {
+            content: '🌸'; /* Little flower icon */
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 2.5em;
+            opacity: 0.7;
+        }
+
+        .invite-container::after {
+            content: '✨'; /* Sparkle icon */
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 2.5em;
+            opacity: 0.7;
+        }
+
+
+        /* Header Image */
+        .header-image img {
+            width: 100%;
+            max-height: 220px;
+            object-fit: cover;
+            border-radius: 15px; /* Slightly more rounded */
+            margin-bottom: 35px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            border: 2px solid #f8d4e4; /* Soft border for the image */
+        }
+
+        /* Event Title */
+        .event-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.8em; /* Larger, more whimsical */
+            color: #ff69b4; /* Hot pink for a cute touch */
+            margin-bottom: 25px;
+            text-shadow: 3px 3px 6px rgba(255, 105, 180, 0.2); /* Pinker shadow */
+            line-height: 1.1;
+        }
+
+        /* Event Details */
+        .event-details p {
+            font-size: 1.15em;
+            margin: 12px 0;
+            color: #666;
+        }
+
+        .event-details .label {
+            font-weight: 600;
+            color: #e67d9f; /* A deeper pink for labels */
+        }
+
+        /* Event Description */
+        .event-description {
+            margin-top: 35px;
+            margin-bottom: 45px;
+            font-size: 1.05em;
+            color: #777;
+            padding: 0 15px; /* Little padding for text */
+        }
+
+        /* RSVP Button */
+        .rsvp-button {
+            display: inline-block;
+            background-color: #90ee90; /* Light green for freshness */
+            color: #fff;
+            padding: 18px 35px; /* Larger button */
+            border-radius: 30px; /* Pill shape */
+            text-decoration: none;
+            font-size: 1.4em; /* Larger text */
+            font-weight: 700;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            margin-top: 25px;
+            border: none; /* No default button border */
+            cursor: pointer;
+        }
+
+        .rsvp-button:hover {
+            background-color: #7bcc7b; /* Darker green on hover */
+            transform: translateY(-5px) rotate(2deg); /* Cute bounce and slight rotate */
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25); /* More prominent shadow on hover */
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 50px;
+            font-size: 0.9em;
+            color: #999;
+            font-style: italic;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .invite-container {
+                padding: 30px;
+                margin: 15px;
             }
-        </style>
-    </head>
-    <body>
-        
-        <h1 id='title'>You're invited!</h1>
-        <h2>Birthday Party</h2>
-        <p>you are invited to Jane's birthday party </p>
-        
-        <p>The details:</p>
-        <ul>
-            <li>Wear white and pink</li>
-            <li>14 June</li>
-            <li>10am till late</li>
-        </ul>
-        
-    </body>
+
+            .event-title {
+                font-size: 3em;
+            }
+
+            .event-details p,
+            .event-description {
+                font-size: 1em;
+            }
+
+            .rsvp-button {
+                padding: 15px 30px;
+                font-size: 1.2em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .invite-container {
+                padding: 20px;
+            }
+
+            .event-title {
+                font-size: 2.5em;
+                margin-bottom: 20px;
+            }
+
+            .header-image img {
+                margin-bottom: 20px;
+            }
+
+            .event-details p {
+                margin: 10px 0;
+            }
+
+            .rsvp-button {
+                padding: 12px 25px;
+                font-size: 1.1em;
+            }
+
+            .invite-container::before,
+            .invite-container::after {
+                font-size: 2em; /* Smaller icons on small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="invite-container">
+        <div class="header-image">
+            <img src="https://images.unsplash.com/photo-1598128549363-d145c2560803?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cute Party Celebration">
+        </div>
+        <h1 class="event-title">You're Invited!</h1>
+
+        <div class="event-details">
+            <p><span class="label">What:</span> A Sweet Celebration!</p>
+            <p><span class="label">When:</span> Saturday, July 27, 2025</p>
+            <p><span class="label">Time:</span> 2:00 PM - 5:00 PM</p>
+            <p><span class="label">Where:</span> The Cosy Corner Cafe, 45 Blossom Lane, Newport, NP10 7AB</p>
+        </div>
+
+        <div class="event-description">
+            <p>Come join us for an afternoon of delightful treats, warm company, and lots of giggles! We're celebrating a special milestone and would love to share the joy with you.</p>
+            <p>Expect delicious cakes, bubbly drinks, and wonderful memories! Your presence is the best present!</p>
+        </div>
+
+        <a href="#" class="rsvp-button">Sweetly RSVP Here!</a>
+
+        <div class="footer">
+            <p>Can't wait to share this happy moment with you!</p>
+        </div>
+    </div>
+</body>
 </html>
